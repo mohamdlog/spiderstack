@@ -1,10 +1,10 @@
 # Data Fetcher
 
-Dependencies:
+**Dependencies:**   
 Python, Scrapy
 
-Scraping Abilities:
+**Scraping Abilities:**  
 Quotes,
 
-Features:
+**Features:**  
 File Storage, Inputs,
