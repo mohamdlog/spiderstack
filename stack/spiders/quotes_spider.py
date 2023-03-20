@@ -6,12 +6,13 @@ class QuotesSpider(scrapy.Spider):
     name = "quotes"
 
     page_set = set()
-    page_number = 0
     page_amount = int(input("Enter amount of pages to scrape: (1 - 10)\n"))
 
     start_urls = []
     
     for i in range(page_amount):
+        page_number = 0
+
         while page_number < 1 or page_number > 10:
             page_number = int(input("Enter a page number to scrape: (1 - 10)\n"))
             if page_number in page_set:
@@ -21,7 +22,6 @@ class QuotesSpider(scrapy.Spider):
         else:
             start_urls.append('https://quotes.toscrape.com/page/' + str(page_number))
             page_set.add(page_number)
-        page_number = 0
 
     def parse(self, response):
         page = response.url.split("/")[-2]
