@@ -1,7 +1,6 @@
 from pathlib import Path
 import shutil
 import glob
-import stack
 import os
 
 
