@@ -19,7 +19,7 @@ match data:
     case _:
         print("Invalid option, try again.")
 
-files = glob.glob(str(Path()) + '\*.html')
+files = glob.iglob(str(Path()) + '\*.html')
 for file in files:
     file_name = os.path.basename(file)
     shutil.move(file, path + file_name)
