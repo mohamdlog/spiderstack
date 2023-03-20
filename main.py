@@ -2,11 +2,11 @@ import os
 import stack
 
 
-permission = input("Do you have an existing output folder for data_fetcher? (y || n)\n")
-if permission == "n":
-    newpath = input("Enter directory for new output folder for data_fetcher:\n") + "data_fetcher"
-    if not os.path.exists(newpath):
-        os.makedirs(newpath)
+path = input("Enter directory for new data_fetcher folder:\n") + "data_fetcher"
+if not os.path.exists(path):
+    os.makedirs(path)
+if os.path.exists(path):
+    print("Existing data_fetcher folder found, moving on.\n")
 
 data = input("What type of data would you like?\n( quotes || books || )\n")
 
