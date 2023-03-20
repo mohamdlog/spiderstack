@@ -9,10 +9,10 @@ class QuotesSpider(scrapy.Spider):
     while page_n < 1 or page_n > 10:
         page_n = int(input("Enter page number to scrape: (1 - 10)\n"))
 
-    url = ['https://quotes.toscrape.com/page/3']
+    start_urls = ['https://quotes.toscrape.com/page/' + str(page_n)]
 
     def parse(self, response):
-        page = response.url
+        page = response.url.split("/")[-2]
         filename = f'quotes-{page}.html'
         Path(filename).write_bytes(response.body)
         self.log(f'Saved file {filename}')
