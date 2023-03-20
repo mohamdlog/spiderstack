@@ -21,4 +21,4 @@ match data:
 files = glob.iglob(f'{Path()}\*.html')
 for file in files:
     file_name = os.path.basename(file)
-    shutil.move(file, path + file_name)
+    shutil.move(file, f'{path}{file_name}')
