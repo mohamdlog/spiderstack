@@ -18,7 +18,7 @@ class QuotesSpider(scrapy.Spider):
                 page_number = 0
                 continue
         else:
-            start_urls.append('https://quotes.toscrape.com/page/' + str(page_number))
+            start_urls.append(f'https://quotes.toscrape.com/page/{page_number}')
             page_strict.add(page_number) if page_strict != 0 else None
 
     def parse(self, response):
