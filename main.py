@@ -1,6 +1,5 @@
 import os
 import stack
-import scrapy
 
 
 permission = input("Do you have an existing output folder for data_fetcher? (y || n)\n")
