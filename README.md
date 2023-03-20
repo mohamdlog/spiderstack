@@ -1,10 +1,13 @@
 # Data Fetcher
 
-Dependencies:
+Additional features if used alongside with File_System.
+
+
+**Dependencies:**   
 Python, Scrapy
 
-Scraping Abilities:
+**Scraping Abilities:**  
 Quotes,
 
-Features:
+**Features:**  
 File Storage, Inputs,
