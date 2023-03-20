@@ -1,3 +1,7 @@
 # Data Fetcher
 
-Status: In Progress
+Scraping Abilities:
+Quotes,
+
+Features:
+File Storage, Inputs,
