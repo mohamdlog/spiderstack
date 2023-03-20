@@ -18,7 +18,7 @@ match data:
     case _:
         print("Invalid option, try again.")
 
-files = glob.iglob(str(Path()) + '\*.html')
+files = glob.iglob(f'{Path()}\*.html')
 for file in files:
     file_name = os.path.basename(file)
     shutil.move(file, path + file_name)
