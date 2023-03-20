@@ -5,9 +5,9 @@ import stack
 import os
 
 
-path = input("Enter directory for new data_fetcher folder:\n") + "data_fetcher"
+path = input("Enter directory for new data_fetcher folder:\n") + "data_fetcher/"
 if os.path.exists(path):
-    print("Existing data_fetcher folder found, moving on.\n")
+    print("Existing data_fetcher folder found, continuing.\n")
 if not os.path.exists(path):
     os.makedirs(path)
 
@@ -18,3 +18,8 @@ match data:
         os.system("scrapy crawl quotes")
     case _:
         print("Invalid option, try again.")
+
+files = glob.glob(str(Path()) + '\*.html')
+for file in files:
+    file_name = os.path.basename(file)
+    shutil.move(file, path + file_name)
