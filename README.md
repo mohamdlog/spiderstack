@@ -1,5 +1,8 @@
 # Data Fetcher
 
+Dependencies:
+Python, Scrapy
+
 Scraping Abilities:
 Quotes,
 
