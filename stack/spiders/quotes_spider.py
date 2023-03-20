@@ -5,6 +5,7 @@ import scrapy
 class QuotesSpider(scrapy.Spider):
     name = "quotes"
     start_urls = []
+    global page_amount
     page_amount = int(input("Enter amount of pages to scrape: (1 - 10)\n"))
     page_strict = set() if input("Allow duplicates? (y/n)\n") == 'n' else 0
 
@@ -22,7 +23,8 @@ class QuotesSpider(scrapy.Spider):
             page_strict.add(page_number) if page_strict != 0 else None
 
     def parse(self, response):
-        page = response.url.split("/")[-2]
-        filename = f'quotes-{page}.html'
-        Path(filename).write_bytes(response.body)
-        self.log(f'Saved file {filename}')
+        for i in range(page_amount):
+            page = response.url.split("/")[-2]
+            filename = f'quotes-{page}-{i+1}.html'
+            Path(filename).write_bytes(response.body)
+            self.log(f'Saved file {filename}')
