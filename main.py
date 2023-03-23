@@ -1,7 +1,8 @@
-from pathlib import Path
 import shutil
 import glob
 import os
+from pathlib import Path
+from stack.items import CountryItem
 
 
 path = input("Enter directory for new data_fetcher folder:\n") + "data_fetcher/"
@@ -17,6 +18,8 @@ match data:
     case 'quotes':
         os.system("scrapy crawl quotes -O quotes.json")
         ext = '\*.json'
+    case 'countries':
+        os.system("scrapy crawl countr")
     case _:
         print("Invalid option, try again.")
 
