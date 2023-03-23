@@ -4,7 +4,7 @@ import scrapy
 class QuotesSpider(scrapy.Spider):
     name = "quotes"
     start_urls = []
-    page_amount = int(input("Enter amount of pages to scrape: (1 - 10)\n"))
+    page_amount = int(input("Enter amount of pages to scrape:\n"))
     page_strict = set() if input("Allow duplicates? (y/n)\n") == 'n' else 0
 
     for i in range(page_amount):
