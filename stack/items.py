@@ -6,7 +6,8 @@
 import scrapy
 
 
-class StackItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class CountryItem(scrapy.Item):
+    country_name = scrapy.Field()
+    country_capital = scrapy.Field()
+    country_population = scrapy.Field()
+    country_area = scrapy.Field()
