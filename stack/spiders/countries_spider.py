@@ -1,29 +1,19 @@
 import scrapy
-
+from scrapy.selector import Selector
 
 class CountriesSpider(scrapy.Spider):
-    name = "countries"
+    name = 'countries'
     start_urls = ['https://www.scrapethissite.com/pages/simple/']
-    country_amount = int(input("\nEnter amount of countries to scrape:\n"))
-    page_strict = set() if input("\nAllow duplicates? (y/n)\n") == 'n' else 0
-
-    for i in range(country_amount):
-        page_number = 0
-
-        while page_number < 1 or page_number > 10:
-            page_number = int(input("\nEnter a page number to scrape: (1 - 10)\n"))
-            if page_strict != 0 and page_number in page_strict:
-                print("Page number already scraped, try again.")
-                page_number = 0
-                continue
-        else:
-            start_urls.append(f'https://quotes.toscrape.com/page/{page_number}')
-            page_strict.add(page_number) if page_strict != 0 else None
+    headers = ['country-name', 'country-capital', 'country-population', 'country-area']
     
-    def parse(self, response):
-        for countryinfo in response.css('div.country-info'):
-            yield {
-                'country_name': countryinfo.css('span.text::text').get(),
-                'author': countryinfo.css('small.author::text').get(),
-                'tags': countryinfo.css('div.tags a.tag::text').getall(),
-            }
+    def parse(self, response, **kwargs):
+        rows = response.css('div.country').getall()
+        for row in rows:
+            item = CountryItem()
+            row = Selector(text=row)
+            for header in self.headers:
+                if header == 'country-name':
+                    item[f"{header.replace('-', '_')}"] = row.xpath('//h3//text()').extract()[1].strip()
+                    continue
+                item[f"{header.replace('-', '_')}"] = row.css(f'span.{header}::text').get().strip()
+            yield item
