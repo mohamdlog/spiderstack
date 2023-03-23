@@ -14,11 +14,12 @@ data = input("What type of data would you like?\n( quotes || books || )\n")
 
 match data:
     case 'quotes':
-        os.system("scrapy crawl quotes")
+        os.system("scrapy crawl quotes -O quotes.json")
     case _:
         print("Invalid option, try again.")
 
-files = glob.iglob(f'{Path()}\*.html')
+
+files = glob.iglob(f'{Path()}\*.json')
 for file in files:
     file_name = os.path.basename(file)
     shutil.move(file, f'{path}{file_name}')
