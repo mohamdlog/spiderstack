@@ -10,16 +10,18 @@ if os.path.exists(path):
 if not os.path.exists(path):
     os.makedirs(path)
 
-data = input("What type of data would you like?\n( quotes || books || )\n")
+data = input("What subject would you like data of?\n( quotes || countries || )\n")
+ext = None
 
 match data:
     case 'quotes':
         os.system("scrapy crawl quotes -O quotes.json")
+        ext = '\*.json'
     case _:
         print("Invalid option, try again.")
 
 
-files = glob.iglob(f'{Path()}\*.json')
+files = glob.iglob(f'{Path()}{ext}')
 for file in files:
     file_name = os.path.basename(file)
     shutil.move(file, f'{path}{file_name}')
