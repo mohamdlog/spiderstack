@@ -1,4 +1,4 @@
-# Data Fetcher
+# Web Scraper
 
 Additional features if used alongside with File_System.
 
@@ -10,4 +10,4 @@ Python, Scrapy
 Quotes,
 
 **Features:**  
-File Storage, Inputs,
+File Storage, Multi-Input,
