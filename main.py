@@ -3,6 +3,7 @@ import glob
 import os
 from pathlib import Path
 
+
 path = None
 create = input("Create folder to store data? (y/n) ")
 if create == 'y':
@@ -12,13 +13,16 @@ if create == 'y':
     if not os.path.exists(path):
         os.makedirs(path)
 
-data = input("\nSelect subject to start scraping.\n( quotes || || )\n")
+data = input("\nSelect subject to start scraping.\n( quotes || wikipedia || )\n")
 ext = None
 
 match data:
     case 'quotes':
         os.system("scrapy crawl quotes -O quotes.json")
         ext = '\*.json'
+    case 'wikipedia':
+        os.system("scrapy crawl wikipedia")
+        ext = ''
     case _:
         print("Invalid option, try again.")
 
