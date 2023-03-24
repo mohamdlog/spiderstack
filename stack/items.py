@@ -4,3 +4,6 @@
 # https://docs.scrapy.org/en/latest/topics/items.html
 
 import scrapy
+
+class WikiItems():
+    pass
