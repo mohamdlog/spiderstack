@@ -1,6 +1,5 @@
 # Web Scraper
 
-
 **Dependencies:**   
 Python, Scrapy
 
