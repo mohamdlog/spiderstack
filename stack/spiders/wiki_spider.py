@@ -18,6 +18,7 @@ class WikiSpider(scrapy.Spider):
             else:
                 self.start_urls.append(f'https://en.wikipedia.org/wiki/{subject}')
                 page_strict.add(subject) if page_strict != 0 else None
+                page += 1
 
     def parse(self, response):
         pass
