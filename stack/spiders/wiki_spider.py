@@ -12,7 +12,6 @@ class WikiSpider(scrapy.Spider):
 
         while page < subject_amount:
             subject = input("\nEnter a subject to scrape (needs to be a specific subdirectory):\n").lower()
-
             if subject in page_strict:
                 print("Page number already scraped, try again.")
                 continue
