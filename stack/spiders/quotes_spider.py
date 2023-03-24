@@ -11,7 +11,6 @@ class QuotesSpider(scrapy.Spider):
 
         for i in range(page_amount):
             page_number = 0
-
             while page_number < 1 or page_number > 10:
                 page_number = int(input("\nEnter a page number to scrape: (1 - 10)\n"))
                 if page_strict != 0 and page_number in page_strict:
