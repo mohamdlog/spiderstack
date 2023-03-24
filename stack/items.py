@@ -4,10 +4,3 @@
 # https://docs.scrapy.org/en/latest/topics/items.html
 
 import scrapy
-
-
-class CountryItem(scrapy.Item):
-    country_name = scrapy.Field()
-    country_capital = scrapy.Field()
-    country_population = scrapy.Field()
-    country_area = scrapy.Field()
