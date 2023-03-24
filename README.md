@@ -1,6 +1,6 @@
 # Web Scraper
 
-**Dependencies:**   
+**Requirements:**   
 Python, Scrapy
 
 **Scraping Abilities:**  
