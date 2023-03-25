@@ -12,7 +12,7 @@ class FinanceSpider(scrapy.Spider):
         page_strict = set() if input("\nAllow duplicates? (y/n)\n") == 'n' else 0
 
         while page < subject_amount:
-            subject = input("\nEnter a stock to scrape:\n").lower()
+            subject = input("\nEnter a stock symbol to scrape:\n").lower()
             if subject in page_strict:
                 print("Stock already scraped, try again.")
                 continue
