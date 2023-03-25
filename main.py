@@ -7,9 +7,9 @@ from pathlib import Path
 path = None
 create = input("Create folder to store data? (y/n)\n")
 if create == 'y':
-    path = input("\nEnter path for new folder:\n") + "scraped_data/"
+    path = input("\nEnter path for new folder:\n") + input("Enter name for new folder:\n")
     if os.path.exists(path):
-        print("Existing data_fetcher folder found, continuing.")
+        print("Folder in path exists, continuing.")
     if not os.path.exists(path):
         os.makedirs(path)
 
@@ -30,4 +30,4 @@ if path is not None:
     files = glob.iglob(f'{Path()}/*.{ext}')
     for file in files:
         file_name = os.path.basename(file)
-        shutil.move(file, f'{path}{file_name}')
+        shutil.move(file, f'{path}/{file_name}')
