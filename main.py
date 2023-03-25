@@ -13,24 +13,21 @@ if create == 'y':
     if not os.path.exists(path):
         os.makedirs(path)
 
-data = input("\nSelect subject to start scraping.\n( quotes || wikipedia || finance )\n")
-ext = None
+ext = input("\nEnter export type:\n( JSON || JSONL || CSV || XML )\n").lower()
+data = input("\nEnter subject to start scraping:\n( quotes || wikipedia || finance )\n").lower()
 
 match data:
     case 'quotes':
-        os.system("scrapy crawl quotes -O quotes.json")
-        ext = '/*.json'
+        os.system(f'scrapy crawl quotes -O quotes.{ext}')
     case 'wikipedia':
-        os.system("scrapy crawl wikipedia -O wiki.html")
-        ext = '/*.html'
+        os.system(f'scrapy crawl wikipedia -O wiki.{ext}')
     case 'finance':
-        os.system("scrapy crawl finance -O finance.json")
-        ext = '/*.json'
+        os.system(f'scrapy crawl finance -O finance.{ext}')
     case _:
         print("Invalid option, try again.")
 
 if path is not None:
-    files = glob.iglob(f'{Path()}{ext}')
+    files = glob.iglob(f'{Path()}/*.{ext}')
     for file in files:
         file_name = os.path.basename(file)
         shutil.move(file, f'{path}{file_name}')
