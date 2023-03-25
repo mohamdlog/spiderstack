@@ -13,7 +13,7 @@ if create == 'y':
     if not os.path.exists(path):
         os.makedirs(path)
 
-data = input("\nSelect subject to start scraping.\n( quotes || wikipedia || )\n")
+data = input("\nSelect subject to start scraping.\n( quotes || wikipedia || finance )\n")
 ext = None
 
 match data:
@@ -21,8 +21,11 @@ match data:
         os.system("scrapy crawl quotes -O quotes.json")
         ext = '/*.json'
     case 'wikipedia':
-        os.system("scrapy crawl wikipedia -O wiki.json")
+        os.system("scrapy crawl wikipedia -O wiki.html")
         ext = '/*.html'
+    case 'finance':
+        os.system("scrapy crawl finance -O finance.json")
+        ext = '/*.json'
     case _:
         print("Invalid option, try again.")
 
