@@ -15,3 +15,12 @@ class FinanceItem(scrapy.Item):
     range_52weeks = scrapy.Field()
     volume = scrapy.Field()
     avg_volume = scrapy.Field()
+
+class QuoteItems(scrapy.Item):
+    text = scrapy.Field()
+    author = scrapy.Field()
+    tags = scrapy.Field()
+
+class WikipediaItems(scrapy.Item):
+    subject_name = scrapy.Field()
+    subject_intro = scrapy.Field()
