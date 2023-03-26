@@ -1,4 +1,4 @@
-# Web Scraper
+# spiderstack
 
 **Requirements:**   
 Python, Scrapy
