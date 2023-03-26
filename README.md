@@ -4,7 +4,7 @@
 Python, Scrapy
 
 **Scraping Abilities:**  
-Quotes, Wikipedia, Finance,
+Finance, Quotes, Wikipedia
 
 **Features:**  
-File Storage, Multi-Input,
+File Storage, Multi-Input
