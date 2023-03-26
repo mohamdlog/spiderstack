@@ -7,7 +7,7 @@ from pathlib import Path
 path = None
 create = input("Create folder to store data? (y/n)\n")
 if create == 'y':
-    path = input("\nEnter path for new folder:\n") + input("Enter name for new folder:\n")
+    path = input("\nEnter path for new folder:\n") + input("\nEnter name for new folder:\n")
     if os.path.exists(path):
         print("Folder in path exists, continuing.")
     if not os.path.exists(path):
