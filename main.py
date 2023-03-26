@@ -31,3 +31,5 @@ if path is not None:
     for file in files:
         file_name = os.path.basename(file)
         shutil.move(file, f'{path}/{file_name}')
+
+print((f'\n{data}.{ext} has been stored in ') + ("spiderstack directory" if path is None else path) + '.\n')
