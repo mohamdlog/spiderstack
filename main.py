@@ -14,15 +14,15 @@ if create == 'y':
         os.makedirs(path)
 
 ext = input("\nEnter export type:\n( JSON || JSONL || CSV || XML )\n").lower()
-data = input("\nEnter subject to start scraping:\n( quotes || wikipedia || finance )\n").lower()
+data = input("\nEnter subject to start scraping:\n( finance || quotes || wikipedia )\n").lower()
 
 match data:
+    case 'finance':
+        os.system(f'scrapy crawl finance -O finance.{ext}')
     case 'quotes':
         os.system(f'scrapy crawl quotes -O quotes.{ext}')
     case 'wikipedia':
         os.system(f'scrapy crawl wikipedia -O wikipedia.{ext}')
-    case 'finance':
-        os.system(f'scrapy crawl finance -O finance.{ext}')
     case _:
         print("Invalid option, try again.")
 
