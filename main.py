@@ -20,7 +20,7 @@ match data:
     case 'quotes':
         os.system(f'scrapy crawl quotes -O quotes.{ext}')
     case 'wikipedia':
-        os.system(f'scrapy crawl wikipedia -O wiki.{ext}')
+        os.system(f'scrapy crawl wikipedia -O wikipedia.{ext}')
     case 'finance':
         os.system(f'scrapy crawl finance -O finance.{ext}')
     case _:
