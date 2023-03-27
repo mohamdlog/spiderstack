@@ -1,3 +1,4 @@
+import os
 import scrapy
 from stack.items import WikipediaItems
 
@@ -7,6 +8,7 @@ class WikipediaSpider(scrapy.Spider):
     start_urls = []
 
     def __init__(self):
+        os.system('cls' if os.name == 'nt' else 'clear')
         page = 0
         page_amount = int(input("\nEnter amount of subjects to scrape:\n"))
         page_strict = 0 
