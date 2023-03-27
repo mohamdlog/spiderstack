@@ -1,3 +1,4 @@
+import os
 import scrapy
 from stack.items import QuoteItems
 
@@ -7,6 +8,7 @@ class QuotesSpider(scrapy.Spider):
     start_urls = []
 
     def __init__(self):
+        os.system('cls' if os.name == 'nt' else 'clear')
         page_amount = int(input("\nEnter amount of pages to scrape:\n"))
         page_strict = 0 
         if page_amount > 1:
